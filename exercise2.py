@@ -20,7 +20,7 @@ class Top10MoviesByTitleLength(MRJob):
             yield movie_id, None
 
     def read_titles(self):
-        with open('u.item', 'r', encoding='ISO-8859-1') as f:
+        with open("/root/input/u.item", 'r', encoding='ISO-8859-1') as f:
             for line in f:
                 fields = line.split('|')
                 movie_id = fields[0]
