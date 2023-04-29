@@ -3,9 +3,9 @@ from mrjob.step import MRStep
 import csv
 
 
-class LongestMovies(MRJob):
+class BestMovies(MRJob):
 
-	MIN_COUNT = 10
+	MIN_COUNT = 100
 	SHOW_LIMIT = 10
 
 
@@ -56,4 +56,4 @@ class LongestMovies(MRJob):
 
 
 if __name__ == '__main__':
-	LongestMovies.run()
+	BestMovies.run()
