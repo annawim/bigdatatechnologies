@@ -36,11 +36,12 @@ class LongestMovies(MRJob):
 		yield movie_id, rating
 
 	def reducer1(self, movie_id, ratings):
-		count = 0
+		sum_ratings, count = 0, 0
 		for r in ratings:
+			sum_ratings += int(r)
 			count += 1
 		if count >= self.MIN_COUNT:
-			yield movie_id
+			yield movie_id, sum_ratings/float(count)
 
 
 	def mapper2(self, movie_id, avg_rating):
