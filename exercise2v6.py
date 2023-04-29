@@ -40,7 +40,8 @@ class LongestMovieTitles(MRJob):
 		for r in ratings:
 			count += 1
 		if count >= self.MIN_COUNT:
-			yield movie_id
+			title_length = len(self.movie_title(int(movie_id)))
+			yield movie_id, title_length
 
 
 	def mapper2(self, movie_id, avg_rating):
