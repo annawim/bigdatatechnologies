@@ -40,7 +40,7 @@ class LongestMovieTitles(MRJob):
 		for r in ratings:
 			count += 1
 		if count >= self.MIN_COUNT:
-			title_length = len(self.movie_title(int(movie_id)))
+			title_length = len(str(self.movie_title(int(movie_id))))
 			yield movie_id, title_length
 
 
