@@ -36,7 +36,7 @@ class LongestMovies(MRJob):
 		yield movie_id, rating
 
 	def reducer1(self, movie_id, ratings):
-		sum_ratings, count = 0, 0
+		count = 0
 		for r in ratings:
 			count += 1
 		if count >= self.MIN_COUNT:
